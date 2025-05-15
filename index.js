@@ -30,8 +30,8 @@ const UserRoutes = require("./routes/userRoute");
 const TaskRoutes = require("./routes/taskRoute");
 
 // Cargar las rutas
-app.use("/api/user", UserRoutes);
-app.use("/api/task", TaskRoutes);
+app.use("/api/auth", UserRoutes);
+app.use("/api", TaskRoutes);
 
 // Poner servidor a escuchar peticiones HTTP
 app.listen(port, ()=>{
