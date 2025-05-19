@@ -2,18 +2,21 @@
 const connection = require("./database/connection");
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
 
 // Mensaje de bienvenida
 console.log("API NODE para To Do List");
 
+dotenv.config();
+
 // Conexion a BD
 connection();
 
 // Crear servidor node
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Configurar Cors
 app.use(cors());
